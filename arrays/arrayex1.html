@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="all" type="checkbox" value="1" name="ch">
+    <input class="cl" type="checkbox" value="1" name="ch">
+    <input class="cl" type="checkbox" value="2" name="ch">
+    <input class="cl" type="checkbox" value="3" name="ch">
+    <input class="cl" type="checkbox" value="4" name="ch">
+    <button id="make" onclick="fun()">CLICK</button>
+
+    <script>
+        const cl = document.getElementsByClassName("cl");
+        const all = document.getElementById("all");
+
+        function fun(){ 
+            if(all.checked == true){
+                for(let i=0; i<cl.length; i++){
+                    cl[i].checked = true;
+                }
+            }else{
+                for(let i=0; i<cl.length; i++){
+                    cl[i].checked = false;
+                }
+
+            }
+        }
+
+
+
+
+        
+
+        //첫번째 체크 박스를 체크하고 Click 버튼을 누르면 전체가 체크되게 하고, 첫번째 체크 박스를 해제하고 Click 버튼을 누르면 전체가 체크 해제되게 하라.
+
+
+        
+        
+        
+        //function fun(){
+        //}
+        //         for(let i=0; i<ch1.length; i++){
+        //         console.log(cl[i].checked);
+        //     }
+        // }
+        // cl[1].checked=false;
+        
+        
+
+
+
+    </script>
+
+
+
+</body>
+</html>

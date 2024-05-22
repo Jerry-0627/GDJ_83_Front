@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .c{
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 선택자 id 외에 다른 것  -->
+
+    <input type="text" class="c">
+    <input type="text" class="c">
+    <input type="text" class="c">
+
+    <button id="btn" onclick="info()">Click</button>
+
+    <script>
+        const btn = document.getElementById("btn");
+
+        const c = document.getElementsByClassName("c"); 
+        // 변수에는 하나의 값만 담을 수 있기 때문에, c는 element를 모아둔 배열이다. c에는 배열이기 때문에 value가 없다.
+        // c에 value의 값을 쓰기 위해서는 c의 배열에서 하나의 값을 꺼내야 한다.
+        
+        function info(){
+            for(let i=0; i<c.length; i++){
+                c[i].value;
+                console.log(i)
+            }
+        }
+        
+
+    </script>
+</body>
+</html>
