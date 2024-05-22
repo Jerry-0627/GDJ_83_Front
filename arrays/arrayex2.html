@@ -7,12 +7,27 @@
 </head>
 <body>
     <div>
-        <img src="../images/DAM1.jpg" alt="">
+        <img id="A" src="../images/DAM1.jpg" alt="" width="400" height="600">
     </div>
-    <button>Next</button>
+    <button onclick="info()">Next</button>
 
     <script>
-        let ar = ["DAM1.jpg", "DAM2.jpg", "DAM3.jpg", "DMA4.jpg", "DAM5.jpg"];
+        //배열을 활용하여 버튼을 클릭 시 다음 사진으로 변경되도록 하시오.
+
+        let ar = ["DAM1.jpg", "DAM2.jpg", "DAM3.jpg", "DAM4.jpg", "DAM5.jpg"];
+        let A = document.getElementById("A")
+        let num = 0
+
+        function info(){
+            if(num>ar.length*1-2){
+                alert("마지막 사진 입니다.");
+                num=0
+                A.src = "../images/" + ar[num];
+            }else{
+                num = num + 1;
+                A.src = "../images/" + ar[num];
+            }
+        }
 
     </script>
 </body>
