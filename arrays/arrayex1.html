@@ -7,20 +7,59 @@
 </head>
 <body>
     <input id="all" onclick="fun()" type="checkbox" value="1" name="ch">
+    
     <input class="cl" type="checkbox" value="1" name="ch">
     <input class="cl" type="checkbox" value="2" name="ch">
     <input class="cl" type="checkbox" value="3" name="ch">
     <input class="cl" type="checkbox" value="4" name="ch">
+    
     <button id="make" onclick="fun()">CLICK</button>
 
     <script>
-        const cl = document.getElementsByClassName("cl");
         const all = document.getElementById("all");
+        const cl = document.getElementsByClassName("cl");
+
+        for(let i=0; i<cl.length; i++){
+            cl[i].addEventListener("click", function(){
+                if(cl[i].checked == false){
+                    all.checked = false;
+                }
+                for(let j=0; j<cl.length; j++){
+                    if(cl[j].checked == true){
+                        all.checked = true;
+                    }
+                }
+            })
+        }
+
+                // }else if(cl[i].checked == true){
+                //     all.checked = true;
+                //     //이게 안되는 이유는 코드가 하나씩 작동하기 때문이다. 되게 하기 위해선 클릭을 눌렀을 때 체크 박스가 모두 검사되게 하여야 한다.
+
+
+      
+
+        
+        // for(let i=0;i<cl.length;i++){
+        //     cl[i].addEventListener("click", function(){
+        //         let flag=true;
+        //         for(let j=0;j<cl.length;j++){
+        //             if(cl[j].checked == false){
+        //                 flag=false;
+        //                 break;
+        //             }
+        //         }
+        //         all.checked=flag;
+                
+        //     })
+        // }
 
         function fun(){ 
             for(let i=0; i<cl.length; i++){
                 cl[i].checked=all.checked;
             }
+        }
+        
 
 
 
@@ -37,7 +76,7 @@
             //     }
 
             // }
-        }
+        
 
 
 

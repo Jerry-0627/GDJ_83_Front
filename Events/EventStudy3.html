@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .C1{
+            background-color: yellow;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <form>
+
+    <input id="A1" type="text">
+    <input id="A2" type="text">
+    <input type="reset" value="RESET">
+    <button type="reset">RESET</button>
+    <!-- input reset태그와 button reset태그 모두 form 밖에 있으면 작동되지 않음. 만약 폼 밖에서 작동시키고 싶으면 스크립트를 입력해야함. -->
+    </form>
+    <!-- form태그는 폼 태그 안에 있는 것들을 서버로 전송할 때 사용함. -->
+
+
+
+    <script>
+        const B1 = document.getElementById("A1");
+        const B2 = document.getElementById("A2");
+
+        B1.addEventListener("keyup", function(){
+            console.log("keypress");
+        })
+
+        B1.addEventListener("focus", function(){
+            B1.classList.add("C1");
+        })
+
+        B1.addEventListener("blur", function(){
+            B1.classList.remove("C1");
+        })
+
+        B2.addEventListener("change", function(){
+            console.log("값이 변경됨.")
+        })
+
+
+    </script>
+</body>
+</html>

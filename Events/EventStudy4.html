@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="result"></div>
+
+    <button class="b1" title="btn1">btn 1</button>
+    <button class="b1" title="btn2">btn 2</button>
+    <button class="b1" title="btn3">btn 3</button>
+
+
+    <script>
+        //
+        const btn1 = document.getElementById("btn1");
+        const btn2 = document.getElementById("btn2");
+        const result = document.getElementById("result");
+
+        const b1 = document.getElementsByClassName("b1"); //const b1의 b1은 엘리먼트가 아니라 엘리먼트가 모인 배열이다. 이벤트는 엘리먼트에 거는 것이다.
+
+        for(let i=0; i<b1.length; i++){
+            b1[i].addEventListener("click", function(){ //클릭했을 때 실행되는 콜백함수를 익명함수로 실행하자
+                console.log(b1[i].title);
+                //console.log(this.title);
+            })
+        }
+
+        // btn1.addEventListener("click", function(){
+        //     btn1.innerHTML='<button id="A2">CLICK 2</button>';
+        // })
+        // btn2.addEventListener("click", function(){
+        //    // B1.click(); // 함수명.이벤트명(), B2를 클릭하면 B1이 실행되기 때문에 click1이 나온다.
+        //    console.log("test");
+        // })
+
+    </script>
+
+
+
+</body>
+</html>
