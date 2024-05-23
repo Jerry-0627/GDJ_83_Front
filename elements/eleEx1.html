@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <div id="di">
+        <!-- <input type="checkbox"> 바나나 -->
+    </div>
+
+    <script>
+        const ar = ['바나나', '수박', '참외', '사과', '망고'];
+        const di = document.getElementById("di");
+
+        //배열값을 꺼내서 만들어야함
+        //태그를 만들어서 끼워넣고를 5번
+
+
+        for(let i=0; i<ar.length; i++){
+        //div를 여러번 줘야함.
+
+        let div = document.createElement("div");
+        let inp = document.createElement("input");
+        let che = document.createAttribute("type");
+        che.value = "checkbox";
+        //input.type="checkbox";
+        
+        //append는 객체 타입이나 문자열 타입 넣을 수 있음, 
+        //append child는 객체 타입만 취급하겠다.
+
+        let tex = document.createTextNode(ar[i]);
+        //div.append(ar[0]);로 해도 된다.
+
+        div.appendChild(inp);
+        inp.setAttributeNode(che);
+        div.appendChild(tex);
+
+        di.appendChild(div);
+        }
+    
+        
+
+        
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

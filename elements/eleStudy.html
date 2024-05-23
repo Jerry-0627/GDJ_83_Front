@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="info">
+    <button id="btn">Add</button>
+    <ul id="result"></ul>
+    <!--버튼을 눌렀을 때 input태그 안에 있는 값이 ul태그 안에 리스트로 중복하여 나오도록 하기. -->
+
+    <div id="result2">
+        <!-- <div>
+            <input type="file">
+        </div> -->
+    </div>
+    <button id="btn2">Add2</button>
+
+
+    <script>
+        const info = document.getElementById("info");
+
+        const btn = document.getElementById("btn");
+        const result = document.getElementById("result");
+
+        const btn2 = document.getElementById("btn2");
+        const result2 = document.getElementById("result2");
+
+
+
+        btn2.addEventListener("click", function(){
+            let d = document.createElement("div");
+            let i = document.createElement("input");
+            let a = document.createAttribute("type");
+            let a2 = document.createAttribute("type");
+
+            a.value="file";
+            a2.value="span"
+
+            //<input type="file">
+            i.setAttributeNode(a);
+            i.setAttributeNode(a2);
+
+            d.appendChild(i);
+
+            result2.append(d);
+
+        })
+
+
+
+
+        
+
+        btn.addEventListener("click", function(){
+            let v = info.value;
+
+
+            let li = document.createElement("li")
+            //contents 생성
+            let c = document.createTextNode(v);
+
+            li.appendChild(c); //li 태그 안에 v의 값을 넣겠다.
+
+            result.append(li);
+        })
+
+    </script>
+</body>
+</html>
