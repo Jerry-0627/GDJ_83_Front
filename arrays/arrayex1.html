@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <input id="all" type="checkbox" value="1" name="ch">
+    <input id="all" onclick="fun()" type="checkbox" value="1" name="ch">
     <input class="cl" type="checkbox" value="1" name="ch">
     <input class="cl" type="checkbox" value="2" name="ch">
     <input class="cl" type="checkbox" value="3" name="ch">
@@ -18,16 +18,25 @@
         const all = document.getElementById("all");
 
         function fun(){ 
-            if(all.checked == true){
-                for(let i=0; i<cl.length; i++){
-                    cl[i].checked = true;
-                }
-            }else{
-                for(let i=0; i<cl.length; i++){
-                    cl[i].checked = false;
-                }
-
+            for(let i=0; i<cl.length; i++){
+                cl[i].checked=all.checked;
             }
+
+
+
+            // if(all.checked == true){
+            // // if(all.checked)
+            //     for(let i=0; i<cl.length; i++){
+            //         cl[i].checked = true;
+            //         // ch[i].checked=all.checked;
+            //     }
+            // }else{
+            //     for(let i=0; i<cl.length; i++){
+            //         cl[i].checked = false;
+            //         // ch[i].checked=all.checked;
+            //     }
+
+            // }
         }
 
 

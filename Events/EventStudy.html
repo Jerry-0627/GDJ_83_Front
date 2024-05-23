@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="A1">CLICK</button>
+    <button id="A2">CLICK</button>
+    <button id="A3">CLICK</button>
+
+
+    <script>
+        const B1 = document.getElementById("A1")
+        const B2 = document.getElementById("A2")
+        const B3 = document.getElementById("A3")
+
+
+        B1.onclick = function(){ //여기서는 익명함수를 사용하기 때문에 function뒤에 함수 이름을 적어주지 않아도 된다.
+            console.log("test");
+        }
+
+        //B1.onclick = go(); //go()함수를 바로 호출하는 것은 안된다. 함수명 뒤에 ()를 입력하면 바로 실행된다.
+        //B2.onclick = go; //함수명() 가 아니라 함수명 만 입력해야 한다.
+        B2.onclick = function(){
+            go();
+        }
+
+        B3.addEventListener("click", function(){
+            console.log("B3")
+        }) //위의 onclick의 on은 접두사, 실제 이벤트명은 접두사를 제외하고 쓴다.
+
+        function go(){
+            console.log("go")
+        }
+
+        
+    </script>
+</body>
+</html>

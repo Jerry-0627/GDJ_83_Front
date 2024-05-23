@@ -16,13 +16,15 @@
 
         let ar = ["DAM1.jpg", "DAM2.jpg", "DAM3.jpg", "DAM4.jpg", "DAM5.jpg"];
         let A = document.getElementById("A")
-        let num = 0
+        let num = 1
 
         function info(){
+
             if(num>ar.length*1-2){
                 alert("마지막 사진 입니다.");
                 num=0
                 A.src = "../images/" + ar[num];
+
             }else{
                 num = num + 1;
                 A.src = "../images/" + ar[num];

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .c1{
+            border: 2px solid black;
+        }        
+        /* $ 사실 c1은 필요가 없었음 */
+        .c2{
+            border: 2px solid red;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div>
+        <input class="A " type="text">
+        <!-- $ <input class="A c1" type="text"> -->
+    </div>
+    <div>
+        <input class="A" type="text">
+        <!-- $ <input class="A c1" type="text"> -->
+
+    </div>
+    <div>
+        <input class="A" type="text">
+        <!-- $ <input class="A c1" type="text"> -->
+        
+    </div>
+    <div>
+        <input class="A" type="text">
+        <!-- $ <input class="A c1" type="text"> -->
+
+    </div>
+    <div>
+        <button onclick="make()">CLICK</button>
+    </div>
+
+    <script>
+        // input에 입력하고 CLICK을 넣으면 비어있는 곳의 테두리에 빨간색으로 테두리 표시, 벨류값이 가지고 왔을 때 없으면 됨.
+        // 1. input에 값이 입력되었는지 확인할 수 있어야함.
+        // 2. 
+        const B = document.getElementsByClassName("A");
+
+
+
+        function make(){
+            for(let i=0; i<B.length; i++){      
+                if(B[i].value == ""){
+                    // $ B[i].classList.replace("c1", "c2")
+                    B[i].classList.add("c2")
+                }else{
+                    // $ B[i].classList.replace("c2", "c1")
+                    B[i].classList.remove("c2")
+                }
+            }
+            
+        }
+
+    </script>
+
+</body>
+</html>
