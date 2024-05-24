@@ -14,24 +14,33 @@
 <body>
     <!-- todolist -->
     <div>
-        <!-- 할일을 저고 버튼을 클릭하면 체크 박스와 입력된 것을 등록 -->
+        <!-- 할일을 적고 버튼을 클릭하면 체크 박스와 입력된 것을 등록 -->
         <!-- class를 이용하여 체크 박스를 체크하면 텍스트에 줄 쳐지게 하기 -->
         <!-- class를 이용하여 체크 박스를 체크 해제하면 텍스트에 줄 사라지게 하기 -->
         <!-- 체크 박스에 체크를 하고 휴지통을 누르면 삭제되도록 하기 -->
-
-        <input type="text">
-        <button>Add</button>
+        <input type="text" id="tex" >
+        <button id="add">Add</button>
     </div>
-
     <div>
         <div>
-            <button>휴지통</button>
+            <button id="del">휴지통</button>
         </div>
-        <!--  -->
         <div>
             <input type="checkbox">
             <span>게임하기</span>
         </div>
     </div>
+
+    <script>
+        const tex = document.getElementById("tex");
+        const add = document.getElementById("add");
+        const del = document.getElementById("del");
+
+        add.addEventListener("click", function(){
+            
+        })
+
+    </script>
+
 </body>
 </html>
