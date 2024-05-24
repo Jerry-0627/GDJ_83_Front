@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id = "result">
+
+    </div>
+    <button id="add">ad</button>
+
+
+
+    <script>
+        const result = document.getElementById("result");
+        const add = document.getElementById("add");
+        
+
+        add.addEventListener("click", function(){
+            let i = document.createElement("input");
+            i.type = "checkbox";
+            i.classList.add("ch"); //한개만 넣을거면 classname
+            
+            result.append(i);
+        })
+
+        result.addEventListener("click", function(e){
+            if(e.target.classList.contains("ch")){ //ch가 있는지 물어보는 함수 즉, ch가 있으면 
+                //실행해야 하는 코드
+            }
+            
+        })
+        //이벤트는 엘리먼트를 가져와서 거기에 이벤트를 걸어주는거임
+        //checkbox에다 이벤트를 걸려면 이벤트가 있어야 함. 따라서 처음부터 나와 있는 애들에 걸어야함. id가 result인 div나 id가 add인 버튼에 가능
+        //어펜트되는 부모 영역에 이벤트를 걸어줘야함.
+    </script>
+</body>
+</html>

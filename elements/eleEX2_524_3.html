@@ -14,36 +14,37 @@
     <div>
         <input type="checkbox" id="all"> 
         <!-- 전체선택 -->
-        <button onclick="click">DELETE</button>
+        <button id="btn">DELETE</button>
     </div>
-    <div class="dele">
-        <input type="checkbox" class="normal">
+    <div id="id1">
+        <input type="checkbox" class="normal" data-del="id1">
         <span>mail title 1</span>
     </div>
-    <div>
-        <input type="checkbox" class="normal">
+    <div id="id2">
+        <input type="checkbox" class="normal" data-del="id2">
         <span>mail title 2</span>
     </div>
-    <div>
-        <input type="checkbox" class="normal">
+    <div id="id3">
+        <input type="checkbox" class="normal" data-del="id3">
         <span>mail title 3</span>
     </div>
-    <div>
-        <input type="checkbox" class="normal">
+    <div id="id4">
+        <input type="checkbox" class="normal" data-del="id4">
         <span>mail title 4</span>
     </div>
-    <div>
-        <input type="checkbox" class="normal">
+    <div id="id5">
+        <input type="checkbox" class="normal" data-del="id5">
         <span>mail title 5</span>
     </div>
-    <div>
-        <input type="checkbox" class="normal">
+    <div id="id6">
+        <input type="checkbox" class="normal" data-del="id6">
         <span>mail title 6</span>
     </div>
 
     <script>
         const all = document.getElementById("all");
         const normal = document.getElementsByClassName("normal");
+        const btn = document.getElementById("btn");
 
 
         // 전체 버튼 클릭 시 일반 버튼 채워지거나 지워지게 하기
@@ -79,11 +80,18 @@
         }
         
         // CLICK 버튼 눌렀을 때 체크된 일반 박스를 삭제되도록 하기
-        function click(){
+        btn.addEventListener("click", function(){
+            let ar = [];
+                for(let i=0; i<normal.length; i++){
+                    if(normal[i].checked){
+                     ar.push(normal[i].getAttribute("data-del"))
+                    }
+                }
 
-        }
-
-
+                for(let i=0; i<ar.length; i++){
+                    document.getElementById(ar[i]).remove();
+                }
+        })
 
 
     </script>
