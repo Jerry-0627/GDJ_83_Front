@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 전체 체크 누르면 일반 체크가 모두 체크되게 한다. -->
+    <!-- 일반 체크 중 하나라도 체크되지 않았다면 전체 체크가 해제되도록 한다 -->
+    <!-- 일반 체크가 모두 체크되면 전체 체크도 체크되게 한다. -->
+    <!-- DELETE 버튼을 누르면 체크된 일반 체크들이 삭제되도록 한다. -->
+
+    <div>
+        <input type="checkbox" id="all"> 
+        <!-- 전체선택 -->
+        <button onclick="click">DELETE</button>
+    </div>
+    <div class="dele">
+        <input type="checkbox" class="normal">
+        <span>mail title 1</span>
+    </div>
+    <div>
+        <input type="checkbox" class="normal">
+        <span>mail title 2</span>
+    </div>
+    <div>
+        <input type="checkbox" class="normal">
+        <span>mail title 3</span>
+    </div>
+    <div>
+        <input type="checkbox" class="normal">
+        <span>mail title 4</span>
+    </div>
+    <div>
+        <input type="checkbox" class="normal">
+        <span>mail title 5</span>
+    </div>
+    <div>
+        <input type="checkbox" class="normal">
+        <span>mail title 6</span>
+    </div>
+
+    <script>
+        const all = document.getElementById("all");
+        const normal = document.getElementsByClassName("normal");
+
+
+        // 전체 버튼 클릭 시 일반 버튼 채워지거나 지워지게 하기
+        all.addEventListener("click", function(){
+            if(all.checked == true){
+                for(let i = 0; i<normal.length; i++){
+                    normal[i].checked = true;
+                }
+            }else if(all.checked == false){
+                for(let i = 0; i<normal.length; i++){
+                    normal[i].checked = false;
+                } 
+            }
+        })
+
+
+        // 일반 버튼 하나라도 체크 해제 시 전체 버튼도 체크 해제 되도록 하기.
+        // 일반 버튼 모두 체크 시 전체 버튼도 체크되도록 하기
+        for(let i=0; i<normal.length; i++){
+            normal[i].addEventListener("click", function(){
+            // 일반 체크가 모두 체크가 되어 있으면 전체 체크도 체크가 되도록 한다
+            // 일반 체크가 모두 true가 되면 전체 체크가 true가 되도록 한다.
+            all.checked = true;
+                for(let j=0; j<normal.length; j++){
+                    if(normal[j].checked == false){
+                        all.checked = false;
+                        break;
+                    }
+                
+                }
+
+            })
+        }
+        
+        // CLICK 버튼 눌렀을 때 체크된 일반 박스를 삭제되도록 하기
+        function click(){
+
+        }
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .c1 {
+            width: 200px;
+            height: 200px;
+        }
+        .bg_red {
+            background-color: red;
+        }
+        .bg_blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="del1" class="c1 bg_red">
+        <input type="text" name="" id="">
+    </div>
+
+    <div id="del2" class="c1 bg_blue">
+        <img id="result" src="../images/DAM1.jpg" alt="" width="400" height="600">
+    </div>
+
+    <script>
+        const del1 = document.getElementById("del1");
+        const del2 = document.getElementById("del2");
+
+
+        del1.addEventListener("click", function(){
+            del1.remove();
+        })
+        del2.addEventListener("click", function(){
+            del2.removeChild(document.getElementById("result"));
+            // 위에 document.getElementById("result") 는 계속 쓸게 아니라 이 함수에서 한번만 쓰고 버릴 것이기에, 전역 변수를 선언하지 않았다.
+        })
+    </script>
+</body>
+</html>
