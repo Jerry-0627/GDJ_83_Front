@@ -1,3 +1,4 @@
+HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,19 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .c1{
+        #c1 span {
             text-decoration: line-through;
         }
-
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .c1 {
+            text-decoration: line-through;
+        }
     </style>
 </head>
 <body>
     <div>
-        <input type="text" id="tex" >
+        <input type="text" id="tex">
         <button id="addbtn">Add</button>
         <button id="delbtn">휴지통</button>
     </div>
-    <div id = "result1">
+    <div id="result1">
     </div>
 
     <script>
@@ -27,52 +36,47 @@
         let num = 0;
 
         addbtn.addEventListener("click", function(){
-            let cd = document.createElement("div");
-                cd.classList.add("di")
-            let ci= document.createElement("input");
-                ci.classList.add("ch");
-                ci.type = "checkbox";
-            let cs = document.createElement("span");
-                cs.classList.add("spa");
-                cs.textContent = tex.value;
+            let d = document.createElement("div");
+            d.classList.add("di");
+            let i1 = document.createElement("input");
+            i1.classList.add("ch");
+            i1.type = "checkbox";
+            let i2 = document.createElement("span");
+            i2.classList.add("spa");
+            i2.textContent = tex.value;
 
-            cd.append(ci);
-            cd.append(cs);
-            result1.append(cd);
+            d.append(i1);
+            d.append(i2);
+            result1.append(d);
+
             tex.value = "";
             num++;
 
-            const ch = document.getElementsByClassName("ch")
+            const ch = document.getElementsByClassName("ch");
             const spa = document.getElementsByClassName("spa");
 
-            for(let i=0; i<ch.length; i++){
+            for(let i = 0; i < ch.length; i++) {
                 ch[i].addEventListener("click", function(){
-                    if(ch[i].checked){
+                    if(ch[i].checked) {
                         spa[i].classList.add("c1");
-                    }else if(!ch[i].checked){
+                    } else {
                         spa[i].classList.remove("c1");
                     }
-                })
+                });
             }
         });
 
-
         delbtn.addEventListener("click", function(){
-            const di = document.getElementsByClassName("di");
             const ch = document.getElementsByClassName("ch");
+            const di = document.getElementsByClassName("di");
 
-            for(let i=0; i<di.length; i++){
-                if(ch[i].checked){
+            for(let i = 0; i < ch.length; i++) {
+                if(ch[i].checked) {
                     di[i].remove();
                     i--;
                 }
             }
-        })
-
-
-
-
+        });
     </script>
-
 </body>
 </html>
