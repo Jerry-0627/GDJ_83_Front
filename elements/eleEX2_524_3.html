@@ -43,17 +43,17 @@
 
     <script>
         const all = document.getElementById("all");
-        const normal = document.getElementsByClassName("normal");
         const btn = document.getElementById("btn");
+        const normal = document.getElementsByClassName("normal");
 
 
         // 전체 버튼 클릭 시 일반 버튼 채워지거나 지워지게 하기
         all.addEventListener("click", function(){
-            if(all.checked == true){
+            if(all.checked){
                 for(let i = 0; i<normal.length; i++){
                     normal[i].checked = true;
                 }
-            }else if(all.checked == false){
+            }else if(!all.checked){
                 for(let i = 0; i<normal.length; i++){
                     normal[i].checked = false;
                 } 
@@ -69,7 +69,7 @@
             // 일반 체크가 모두 true가 되면 전체 체크가 true가 되도록 한다.
             all.checked = true;
                 for(let j=0; j<normal.length; j++){
-                    if(normal[j].checked == false){
+                    if(!normal[j].checked){
                         all.checked = false;
                         break;
                     }
