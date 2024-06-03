@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- jpg, png, gif, jpeg, jiff -->
+    <input type="file" class="fileName">
+    <input type="file" class="fileName">
+    <input type="file" class="fileName">
+
+    <button id="btn">CLICK</button>
+
+    <script>
+        const fileAr = document.getElementsByClassName("fileName");
+        // const fileName = document.getElementById("fileName");
+        const btn = document.getElementById("btn");
+
+
+        btn.addEventListener("click", function(){
+            let count = 0;
+            for(let i =0; i<fileAr.length; i++){
+                let dot = fileAr[i].value.lastIndexOf('.');
+                let images = fileAr[i].value.substring(dot+1);
+                if(images == "jpg" || images == "png" ||  images == "gif" ||  images == "jpeg" ||  images == "jiff" ||  images == "webp"){
+                }else{
+                    count++;
+                }
+            }
+            if(count == 0){
+                console.log("모두 이미지 파일입니다.")
+            }else{
+                console.log(count + "개가 이미지 파일이 아닙니다.")
+            }
+            // let dot = fileName.value.lastIndexOf('.');
+            // let images = fileName.value.substring(dot+1);
+            // if(images == "jpg" || images == "png" ||  images == "gif" ||  images == "jpeg" ||  images == "jiff" ||  images == "webp"){
+            //     console.log("이미지 파일입니다.")
+            // }else{
+            //     console.log("이미지 파일이 아닙니다.");
+            // }
+        })
+    </script>
+</body>
+</html>
